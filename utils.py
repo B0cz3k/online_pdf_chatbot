@@ -1,3 +1,4 @@
+import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from transformers import AutoTokenizer
 from langchain_community.embeddings import (
@@ -7,6 +8,8 @@ from pinecone import Pinecone, ServerlessSpec
 from io import BytesIO
 from PyPDF2 import PdfReader
 from langchain_core.documents.base import Document
+
+TOKEN = os.environ.get('TOKEN')
 
 class PineconeDB:
     def __init__(self, api_key: str, index_name: str, dim=384): # in future: change the dimensionality and setup based on a chosen encoder
