@@ -15,7 +15,7 @@ def load_model(model="google/gemma-2b-it"):
 
 @st.cache_resource
 def load_encoder(model="sentence-transformers/all-MiniLM-L12-v2"):
-    return Encoder(model_name=model, model_kwargs={'device': DEVICE})
+    return Encoder(model_name=model, model_kwargs={})
 
 @st.cache_resource
 def initialize_db():
