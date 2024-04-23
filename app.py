@@ -14,7 +14,7 @@ def load_model(model="google/gemma-2b-it"):
     return ChatModel(model_id=model, device=DEVICE)
 
 @st.cache_resource
-def load_encoder(model="sentence-transformers/all-MiniLM-L12-v2"):
+def load_encoder(model="sentence-transformers/sentence-t5-base"):
     return Encoder(model_name=model, model_kwargs={})
 
 @st.cache_resource
