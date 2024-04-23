@@ -5,3 +5,4 @@ pinecone-client
 pypdf2
 langchain
 bitsandbytes
+accelerate
