@@ -4,3 +4,4 @@ transformers
 pinecone-client
 pypdf2
 langchain
+huggingface_hub
