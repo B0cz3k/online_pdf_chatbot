@@ -35,6 +35,7 @@ class Encoder():
         self.embedding_function = HuggingFaceEmbeddings(
             model_name = model_name,
             model_kwargs = model_kwargs,
+            token=TOKEN
         )
 
 def load_pdf_bytes(pdf_bytes):
