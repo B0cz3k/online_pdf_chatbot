@@ -7,3 +7,4 @@ langchain
 bitsandbytes
 accelerate
 sentencepiece
+sentence_transformers
