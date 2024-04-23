@@ -1,9 +1,10 @@
+import os
 import torch
 import streamlit as st
 from model import ChatModel
 from utils import Encoder, loader_splitter, PineconeDB
 
-API_KEY = "3ec78e59-177f-4acc-9dba-4bf0fb9632c4" # HIDE BEFORE COMMITTING
+API_KEY = os.environ.get('API_KEY')
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 st.title("PDF Chatbot")

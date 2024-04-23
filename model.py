@@ -1,5 +1,8 @@
+import os
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
+
+TOKEN = os.environ.get('TOKEN')
 
 class ChatModel():
     def __init__(self, model_id, device) -> None:
