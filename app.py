@@ -32,7 +32,7 @@ def load_doc(files):
             "metadata": {"text": doc.page_content}
             }])
     
-model = load_model()
+model = load_model(model="google/flan-t5-base")
 encoder = load_encoder()
 db = initialize_db()
 

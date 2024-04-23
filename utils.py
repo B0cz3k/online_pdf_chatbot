@@ -50,13 +50,13 @@ def load_pdf_bytes(pdf_bytes):
         page_content += page.extract_text()
     return page_content
 
-def loader_splitter(files: list, chunk_size: int=256, model='sentence-transformers/all-MiniLM-L12-v2'):
+def loader_splitter(files: list, chunk_size: int=128, model='sentence-transformers/all-MiniLM-L12-v2'):
     pages = [Document(load_pdf_bytes(f), metadata={'source': f.name}) for f in files]
 
     text_splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
         tokenizer=AutoTokenizer.from_pretrained(model),
         chunk_size=chunk_size,
-        chunk_overlap=chunk_size // 10,
+        chunk_overlap=chunk_size // 20,
         strip_whitespace=True,
     )
     return text_splitter.split_documents(pages)
