@@ -10,7 +10,7 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 st.title("PDF Chatbot")
 
 @st.cache_resource
-def load_model(model="google/gemma-2b-it"):
+def load_model(model):
     return ChatModel(model_id=model, device=DEVICE)
 
 @st.cache_resource
@@ -32,7 +32,7 @@ def load_doc(files):
             "metadata": {"text": doc.page_content}
             }])
     
-model = load_model(model="google-bert/bert-base-uncased")
+model = load_model(model="openai-community/gpt2")
 encoder = load_encoder()
 db = initialize_db()
 

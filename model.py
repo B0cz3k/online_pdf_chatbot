@@ -13,7 +13,7 @@ class ChatModel():
         self.quant_conf = BitsAndBytesConfig(load_in_4bit=True,
                                              bnb_4bit_compute_dtype=torch.bfloat16)
         self.model = AutoModelForCausalLM.from_pretrained(model_id, 
-                                                            #device_map='auto',
+                                                            device_map='auto',
                                                             config=self.quant_conf,
                                                             token=TOKEN
                                                             )
