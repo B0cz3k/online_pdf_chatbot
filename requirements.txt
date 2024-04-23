@@ -1,6 +1,6 @@
 torch
 streamlit
 transformers
-pinecone
+pinecone-client
 pypdf2
 langchain
