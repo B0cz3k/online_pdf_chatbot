@@ -12,7 +12,7 @@ from langchain_core.documents.base import Document
 TOKEN = os.environ.get('TOKEN')
 
 class PineconeDB:
-    def __init__(self, api_key: str, index_name: str, dim=384): # in future: change the dimensionality and setup based on a chosen encoder
+    def __init__(self, api_key: str, index_name: str, dim=768): # in future: change the dimensionality and setup based on a chosen encoder
         self.pinecone = Pinecone(api_key=api_key)
         try:
             self.pinecone.create_index(index_name, 

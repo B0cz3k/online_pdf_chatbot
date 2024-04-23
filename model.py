@@ -8,8 +8,11 @@ class ChatModel():
     def __init__(self, model_id, device) -> None:
         self.device = device
         self.tokenizer = T5Tokenizer.from_pretrained(model_id, token=TOKEN)
+        self.quant_conf = BitsAndBytesConfig(load_in_4bit=True,
+                                             bnb_4bit_compute_dtype=torch.bfloat16)
         self.model = T5ForConditionalGeneration.from_pretrained(model_id, 
                                                           device_map='auto',
+                                                          config=self.quant_conf,
                                                           token=TOKEN)
         self.model.eval()
         self.chat = []
