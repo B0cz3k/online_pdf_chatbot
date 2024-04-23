@@ -38,8 +38,8 @@ db = initialize_db()
 
 with st.sidebar:
     # inputs and parameters in the sidebar
-    max_new_tokens = st.number_input("max_new_tokens", 128, 4096, 2048)
-    k = st.number_input("k", 1, 10, 6)
+    max_new_tokens = st.number_input("max_new_tokens", 128, 4096, 256)
+    k = st.number_input("k", 1, 10, 3)
     uploaded_files = st.file_uploader(
         "Upload PDFs for context", type=["PDF", "pdf"], accept_multiple_files=True
     )

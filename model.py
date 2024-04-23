@@ -9,6 +9,7 @@ class ChatModel():
         self.device = device
         self.tokenizer = AutoTokenizer.from_pretrained(model_id, 
                                                      token=TOKEN, 
+                                                     padding_size='left'
                                                      )
         self.quant_conf = BitsAndBytesConfig(load_in_4bit=True,
                                              bnb_4bit_compute_dtype=torch.bfloat16)
