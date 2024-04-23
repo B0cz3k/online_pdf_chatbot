@@ -4,7 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 class ChatModel():
     def __init__(self, model_id, device) -> None:
         self.device = device
-        self.tokenizer = AutoTokenizer.from_pretrained(model_id, token=TOKEN)
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         self.quant_conf = BitsAndBytesConfig(load_in_4bit=True,
                                              bnb_4bit_compute_dtype=torch.bfloat16)
         self.model = AutoModelForCausalLM.from_pretrained(model_id, 
