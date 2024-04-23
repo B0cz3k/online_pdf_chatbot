@@ -1,0 +1,6 @@
+torch
+streamlit
+transformers
+pinecone
+pypdf2
+langchain
